@@ -1,22 +1,26 @@
 module.exports.requestHooks = [
-  context => {
+  (context) => {
     const url = new URL(context.request.getUrl());
 
-    // Sort by param name length so `:foo` doesn't clobber `:foobar`
-    for (const { name, value } of context.request.getParameters().sort((a, b) => b.name.length - a.name.length)) {
-      if (!name) continue;
-      
-      const toReplace = `:${name}`;
-      let path = url.pathname;
+    const params = context.request.getParameters();
 
-      if (!path.includes(toReplace)) {
+    for (const { name, value } of params) {
+      if (!name) continue;
+
+      const toReplace = `(?<!{){${name}}(?!})`;
+      let path = decodeURIComponent(url.pathname);
+
+      const regex = RegExp(toReplace);
+
+      if (!regex.test(path)) {
         // Not found in URL, treat as regular parameter
         continue;
       }
 
-      while (path.includes(toReplace)) {
-        path = path.replace(toReplace, encodeURIComponent(value));
+      while (regex.test(path)) {
+        path = path.replace(regex, value);
       }
+
       url.pathname = path;
       context.request.removeParameter(name);
     }

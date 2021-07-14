@@ -1,13 +1,13 @@
 {
-  "name": "insomnia-plugin-path-parameters",
-  "version": "1.0.3",
-  "author": "Gregory Schier <greg.schier@konghq.com>",
+  "name": "insomnia-plugin-swagger-path-parameters",
+  "version": "1.0.4",
+  "author": "Gregory Schier <greg.schier@konghq.com>, Davi Rodrigues <developer.davi@gmail.com>",
   "description": "Insomnia plugin to enable URL path parameters in Query tab",
   "license": "MIT",
-  "repository": "https://github.com/gschier/insomnia-plugin-path-parameters",
+  "repository": "https://github.com/developerdavi/insomnia-plugin-swagger-path-parameters",
   "main": "index.js",
   "insomnia": {
-    "name": "path-parameters",
-    "description": "Define path parameters in Query tab"
+    "name": "swagger-path-parameters",
+    "description": "Define path parameters in Query tab like Swagger (using single curly brackets e.g.: {foo}, {foobar})"
   }
 }
