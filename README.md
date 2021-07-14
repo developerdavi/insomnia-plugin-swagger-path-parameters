@@ -1,13 +1,13 @@
 # Insomnia Swagger-like Path Parameters Plugin
 
-[![Npm Version](https://img.shields.io/npm/v/insomnia-plugin-path-parameters.svg)](https://www.npmjs.com/package/insomnia-plugin-path-parameters)
+[![Npm Version](https://img.shields.io/npm/v/insomnia-plugin-swagger-path-parameters.svg)](https://www.npmjs.com/package/insomnia-plugin-swagger-path-parameters)
 
 This is a plugin for [Insomnia](https://insomnia.rest) that automatically replaces URL path
 parameters with syntax `{myParam}` with values defined in the Query tab by the same name.
 
 ## Installation
 
-Install the `insomnia-plugin-path-parameters` plugin from Preferences > Plugins.
+Install the `insomnia-plugin-swagger-path-parameters` plugin from Preferences > Plugins.
 
 ## Usage
 
